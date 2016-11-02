@@ -4,8 +4,9 @@
 html{box-sizing:border-box}
 *,:after,:before{box-sizing:inherit}
 h1,h2,h3,h4,h5,h6{font-family:Raleway,sans-serif;font-weight:400}
-.card-container{border:1px solid #EEE;border-radius:.5em;box-shadow:1px 1px 2px 0 rgba(0,0,0,.1);background:#FFE;width:10em;height:14em;position:absolute}
-.card-container .card-rules,.card-container .card-title,.card-container .card-type{position:absolute;width:9em;left:.5em}
+#app{perspective:800px;background:#EEF}
+.card-container{border:1px solid #EEE;border-radius:.5em;box-shadow:1px 1px 2px 0 rgba(0,0,0,.1);background:#FFE;width:10em;height:14em;position:absolute;transform-style:preserve-3d;transition:transform .3s}
+.card-container .card-rules,.card-container .card-title,.card-container .card-type{position:absolute;width:9em;overflow:hidden;left:.5em}
 .card-container .card-title{top:.5em}
 .card-container .card-type{top:7em}
 .card-container .card-rules{top:8em}

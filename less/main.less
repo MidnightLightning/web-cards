@@ -2,6 +2,11 @@
 
 h1, h2, h3, h4, h5, h6 { font-family: Raleway, sans-serif; font-weight:400; }
 
+#app {
+  perspective: 800px;
+  background: #EEF;
+}
+
 .card-container {
   border:solid 1px #EEE;
   border-radius: 0.5em;
@@ -10,9 +15,12 @@ h1, h2, h3, h4, h5, h6 { font-family: Raleway, sans-serif; font-weight:400; }
   width: 10em;
   height: 14em;
   position:absolute;
+  transform-style: preserve-3d;
+  transition: transform 300ms;
   .card-title, .card-type, .card-rules {
     position:absolute;
     width: 9em;
+    overflow:hidden;
     left:0.5em;
   }
   .card-title {
