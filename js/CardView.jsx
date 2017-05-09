@@ -12,13 +12,21 @@ const CardView = React.createClass({
     });
   },
   render: function() {
-    let cardData = this.props.cardData;
-    let style = {};
+    const cardData = this.props.cardData;
+    let transforms = [];
+    transforms.push(`translate3d(${this.props.position.x}px, ${this.props.position.y}px, 0)`);
     if (this.state.tapped) {
-      style.transform = 'rotate3d(0,0,1, 80deg)';
+      transforms.push('rotate3d(0,0,1, 80deg)');
     }
+    const style = {
+      transform: transforms.join(' ')
+    }
+    console.log(style);
     return (
-      <div className="card-container" style={style} onClick={this.handleClick}>
+      <div className="card-container" style={style}
+        onClick={this.handleClick}
+        onMouseDown={this.props.handleDragStart}
+      >
         <div className="card-title">{cardData.title}</div>
         <div className="card-type">{cardData.cardType}</div>
         <div className="card-rules">{cardData.rules}</div>
